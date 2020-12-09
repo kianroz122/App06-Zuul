@@ -5,6 +5,8 @@
  * @author (your name)
  * @version (a version number or a date)
  */
+
+/** THIS IS A TEST DELETE THIS LINE */
 public class Map
 {
     // instance variables - replace the example below with your own
