@@ -1,3 +1,4 @@
+import.util.Random;
 /**
  *  This class is the main class of the "World of Zuul" application. 
  *  "World of Zuul" is a very simple, text based adventure game.  Users 
@@ -21,8 +22,9 @@ public class Game
 {
     private final Parser parser;
     private Room currentRoom;
-    public int Sober;
-        
+    public int sober;
+    public boolean take;
+    Random rand = new Random();
     /**
      * Create the game and initialise its internal map.
      */
@@ -31,7 +33,8 @@ public class Game
         createRooms();
         parser = new Parser();
         private Map map;
-        Sober = 100;
+        sober = 100;
+        take = false;
     }
 
 
@@ -65,6 +68,9 @@ public class Game
         System.out.println("Welcome to Blacked Out");
         System.out.println("It's Your mates 21st Birthday so let's make this a sesh you'll never forget... Well");
         System.out.println("Type '" + CommandWord.HELP + "' if you need help. ");
+        System.out.println();
+        System.out.println();
+        System.out.println("Sober metre: "+ sober);
         System.out.println();
         System.out.println(currentRoom.getLongDescription());
     }
@@ -106,7 +112,7 @@ public class Game
     private void printHelp() 
     {
         System.out.println("You are lost. You are alone. You Stumble");
-        System.out.println("around at the university.");
+        System.out.println("around the "+currentRoom);
         System.out.println();
         System.out.println("Your command words are:");
         parser.showCommands();
