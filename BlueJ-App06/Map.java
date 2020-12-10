@@ -8,25 +8,25 @@ import java.util.ArrayList;
 
 public class Map
 {
-    private Room outside;
-    private Room revolutions, antelope, queenshead, butlers;
+    private Room square;
+    private Room revolutions, antelope, queenshead, butlers, greyhound;
     private Room startRoom;
 
     public Map()
     {
         createRooms();
-        startRoom = outside; //Game starts outside
+        startRoom = square; //Game starts outside
     }
     /**
      * Create all the rooms and link their exits together.
      */
     private void createRooms() {
-        Room outside, revolutions, antelope, queenshead, butlers, house;
+        Room square, revolutions, antelope, queenshead, butlers, house;
 
         // create the rooms
-        outside = new Room("outside the main entrance of the university");
+        square = new Room("A pub in each direction, which do you visit first?");
         //sets the description for when user is outside//
-        outside.setDescription("You are in the middle of four pubs, the bouncers don't look very friendly");
+        square.setDescription("You are in the town square, in the middle of four pubs, the bouncers don't look very friendly");
 
         //all of the rooms//
         revolutions = new Room("in rev's, the floors sticky");
@@ -38,37 +38,69 @@ public class Map
         butlers = new Room("they serve pizza in here");
         butlers.setItem(Items.PIZZA);
 
-        connectOutside();
+        greyhound = new Room("//");
+
+        trafalgar = new Room("//");
+
+
+        connectSquare();
         connectRevolutions();
+        connectQueenshead();
+        connectButlers();
+        connectGreyhound();
     }
 
 
     // initialise room exits
-    private void connectOutside()
+    private void connectSquare()
     {
-        outside.setExit("north", butlers);
-        outside.setExit("east", revolutions);
-        outside.setExit("south", antelope);
-        outside.setExit("west", queenshead);
+        square.setExit("north", butlers);
+        square.setExit("east", revolutions);
+        square.setExit("south", antelope);
+        square.setExit("west", queenshead);
     }
 
-    private void connectRevolutions()
-    {
-        revolutions.setExit("west", outside);
-    }
-    private void connectAntelope()
-    {
-        antelope.setExit("east", outside);
-    }
+//These 3 rooms only go back to the square//
+
     private void connectQueenshead()
     {
-        queenshead.setExit("north", outside);
+        queenshead.setExit("east", square);
     }
+    private void connectRevolutions()
+    {
+        revolutions.setExit("west", square);
+    }
+
     private void connectButlers() {
-        butlers.setExit("west", outside);
+        butlers.setExit("south", square);
     }
 
+//The antelope goes north back to the square or south to greyhound
 
+    private void connectAntelope()
+    {
+        antelope.setExit("north", square);
+        antelope.setExit("south" greyhound);
+        antelope.setExit("east" trafalgar);
     }
 
+    private void connectGreyhound() {
+        greyhound.setExit("north", antelope);
+        greyhound.setExit("west" queenvic);
+        greyhound.setExit("south" lordnelson);
+    }
+
+    private void connectTrafalgar()
+    {
+        trafalgar.setExit("west", antelope);
+        trafalgar.setExit("south", threecrown);
+    }
 }
+
+
+
+
+
+
+
+
