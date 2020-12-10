@@ -1,4 +1,4 @@
 public enum Items
 {
-    PIZZA
+    PIZZA, GLASSOFWATER, CRISPS, NUTS, KEY, NACHOS, GLASSES
 }
