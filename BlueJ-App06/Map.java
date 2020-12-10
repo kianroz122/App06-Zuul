@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+
 /**
  * Write a description of class Map here.
  *
@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class Map
 {
     private Room square;
-    private Room revolutions, antelope, queenshead, butlers, greyhound, trafalgar, threecrown, queenvic, lordnelson, queenvic, lordnelson, harbourmaster, horseandjockey, vineyard, priory, crown, home;
+    private Room revolutions, antelope, queenshead, butlers, greyhound, trafalgar, threecrown, queenvic, lordnelson, harbourmaster, horseandjockey, vineyard, priory, crown, home;
     private Room startRoom;
 
     public Map()
@@ -20,9 +20,8 @@ public class Map
     /**
      * Create all the rooms and link their exits together.
      */
-    private void createRooms() {
-        Room square, revolutions, antelope, queenshead, butlers, house;
-
+    private void createRooms()
+    {
         // create the rooms
         square = new Room("A pub in each direction, which do you visit first?");
         //sets the description for when user is outside//
@@ -31,9 +30,9 @@ public class Map
         //all of the rooms//
         revolutions = new Room("in rev's, the floors sticky");
 
-        antelope = new Room("the bouncer doesn't even ask for ID!");
-
         queenshead = new Room("//");
+
+        antelope = new Room("the bouncer doesn't even ask for ID!");
 
         butlers = new Room("they serve pizza in here");
         butlers.setItem(Items.PIZZA);
@@ -41,12 +40,31 @@ public class Map
         greyhound = new Room("//");
 
         trafalgar = new Room("//");
+        trafalgar.setItem(Items.CRISPS);
 
         threecrown = new Room("//");
+        threecrown.setItem(Items.GLASSOFWATER);
 
         queenvic = new Room ("//");
 
         lordnelson = new Room ("//");
+
+        harbourmaster = new Room("//");
+        harbourmaster.setItem(Items.NACHOS);
+
+        horseandjockey = new Room("//");
+
+        priory = new Room("//");
+        priory.setItem(Items.NUTS);
+
+        crown = new Room("//");
+        crown.setItem(Items.GLASSES);
+
+        vineyard = new Room("//");
+        vineyard.setItem(Items.KEY);
+
+        home = new Room("//");
+
 
 
 //connect each room//
@@ -65,6 +83,7 @@ public class Map
         connectCrown();
         connectVineyard();
         connectHome();
+        connectAntelope();
     }
 
 
@@ -102,8 +121,8 @@ public class Map
 //The greyhound leads north to the antelope, west to the queenvic and south to the lordnelson//
     private void connectGreyhound() {
         greyhound.setExit("north", antelope);
-        greyhound.setExit("west" queenvic);
-        greyhound.setExit("south" lordnelson);
+        greyhound.setExit("west", queenvic);
+        greyhound.setExit("south", lordnelson);
     }
 
     private void connectTrafalgar()
