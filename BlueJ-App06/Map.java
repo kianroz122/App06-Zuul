@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class Map
 {
     private Room square;
-    private Room revolutions, antelope, queenshead, butlers, greyhound;
+    private Room revolutions, antelope, queenshead, butlers, greyhound, trafalgar, threecrown, queenvic, lordnelson, queenvic, lordnelson, harbourmaster, horseandjockey, vineyard, priory, crown, home;
     private Room startRoom;
 
     public Map()
@@ -42,12 +42,29 @@ public class Map
 
         trafalgar = new Room("//");
 
+        threecrown = new Room("//");
 
+        queenvic = new Room ("//");
+
+        lordnelson = new Room ("//");
+
+
+//connect each room//
         connectSquare();
         connectRevolutions();
         connectQueenshead();
         connectButlers();
         connectGreyhound();
+        connectTrafalgar();
+        connectThreecrown();
+        connectQueenvic();
+        connectLordnelson();
+        connectHarbourmaster();
+        connectHorseandjockey();
+        connectPriory();
+        connectCrown();
+        connectVineyard();
+        connectHome();
     }
 
 
@@ -75,15 +92,14 @@ public class Map
         butlers.setExit("south", square);
     }
 
-//The antelope goes north back to the square or south to greyhound
-
-    private void connectAntelope()
-    {
+//The antelope goes north back to the square or south to greyhound//
+    private void connectAntelope() {
         antelope.setExit("north", square);
-        antelope.setExit("south" greyhound);
-        antelope.setExit("east" trafalgar);
+        antelope.setExit("south", greyhound);
+        antelope.setExit("east", trafalgar);
     }
 
+//The greyhound leads north to the antelope, west to the queenvic and south to the lordnelson//
     private void connectGreyhound() {
         greyhound.setExit("north", antelope);
         greyhound.setExit("west" queenvic);
@@ -95,6 +111,58 @@ public class Map
         trafalgar.setExit("west", antelope);
         trafalgar.setExit("south", threecrown);
     }
+
+    private void connectThreecrown()
+    {
+    threecrown.setExit("north", trafalgar);
+    }
+
+    private void connectQueenvic()
+    {
+        queenvic.setExit("east", greyhound);
+    }
+
+    private void connectLordnelson()
+    {
+        lordnelson.setExit("north", greyhound);
+        lordnelson.setExit("east", horseandjockey);
+        lordnelson.setExit("south", vineyard);
+        lordnelson.setExit("west", harbourmaster);
+    }
+
+    private void connectHarbourmaster()
+    {
+        harbourmaster.setExit("east", lordnelson);
+    }
+
+    private void connectHorseandjockey()
+    {
+        horseandjockey.setExit("west", lordnelson);
+    }
+
+    private void connectPriory()
+    {
+        priory.setExit("north", horseandjockey);
+    }
+
+    private void connectCrown()
+    {
+        crown.setExit("north", priory);
+    }
+
+    private void connectVineyard()
+    {
+        vineyard.setExit("north", lordnelson);
+        vineyard.setExit("south", home);
+    }
+
+    private void connectHome()
+    {
+        home.setExit("north", vineyard);
+    }
+
+
+
 }
 
 
