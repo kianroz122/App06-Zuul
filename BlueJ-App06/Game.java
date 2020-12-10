@@ -21,6 +21,7 @@ public class Game
 {
     private final Parser parser;
     private Room currentRoom;
+    public int Sober;
         
     /**
      * Create the game and initialise its internal map.
@@ -30,6 +31,7 @@ public class Game
         createRooms();
         parser = new Parser();
         private Map map;
+        Sober = 100;
     }
 
 
@@ -60,8 +62,8 @@ public class Game
     private void printWelcome()
     {
         System.out.println();
-        System.out.println("Welcome to the World of Zuul!");
-        System.out.println("World of Zuul is a new, incredibly boring adventure game.");
+        System.out.println("Welcome to Blacked Out");
+        System.out.println("It's Your mates 21st Birthday so let's make this a sesh you'll never forget... Well");
         System.out.println("Type '" + CommandWord.HELP + "' if you need help. ");
         System.out.println();
         System.out.println(currentRoom.getLongDescription());
@@ -103,7 +105,7 @@ public class Game
      */
     private void printHelp() 
     {
-        System.out.println("You are lost. You are alone. You wander");
+        System.out.println("You are lost. You are alone. You Stumble");
         System.out.println("around at the university.");
         System.out.println();
         System.out.println("Your command words are:");
