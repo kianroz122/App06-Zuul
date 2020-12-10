@@ -29,40 +29,9 @@ public class Game
     {
         createRooms();
         parser = new Parser();
+        private Map map;
     }
 
-    /**
-     * Create all the rooms and link their exits together.
-     */
-    private void createRooms()
-    {
-        Room outside, revolutions, pub, lab, office, house;
-      
-        // create the rooms
-        outside = new Room("outside the main entrance of the university");
-        revolutions = new Room("in rev's Beaconsfield");
-        pub = new Room("in the campus pub");
-        lab = new Room("in a computing lab");
-        office = new Room("in the computing admin office");
-        house = new Room("At your house, you've made it home");
-        
-        // initialise room exits
-        outside.setExit("east", revolutions);
-        outside.setExit("south", lab);
-        outside.setExit("west", pub);
-        outside.setExit("north", house);
-
-        revolutions.setExit("west", outside);
-
-        pub.setExit("east", outside);
-
-        lab.setExit("north", outside);
-        lab.setExit("east", office);
-
-        office.setExit("west", lab);
-
-        currentRoom = outside;  // start game outside
-    }
 
     /**
      *  Main play routine.  Loops until end of play.
