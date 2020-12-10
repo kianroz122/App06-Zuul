@@ -6,11 +6,10 @@ import java.util.ArrayList;
  * @version (a version number or a date)
  */
 
-/** THIS IS A TEST DELETE THIS LINE */
 public class Map
 {
     private Room outside;
-    private Room revolutions, pub, lab, office, house;
+    private Room revolutions, antelope, queenshead, butlers;
     private Room startRoom;
 
     public Map()
@@ -21,33 +20,55 @@ public class Map
     /**
      * Create all the rooms and link their exits together.
      */
-    private void createRooms()
-    {
-        Room outside, revolutions, pub, lab, office, house;
+    private void createRooms() {
+        Room outside, revolutions, antelope, queenshead, butlers, house;
 
         // create the rooms
         outside = new Room("outside the main entrance of the university");
-        revolutions = new Room("in rev's Beaconsfield");
-        pub = new Room("in the campus pub");
-        lab = new Room("in a computing lab");
-        office = new Room("in the computing admin office");
-        house = new Room("At your house, you've made it home");
+        //sets the description for when user is outside//
+        outside.setDescription("You are in the middle of four pubs, the bouncers don't look very friendly");
 
-        // initialise room exits
+        //all of the rooms//
+        revolutions = new Room("in rev's, the floors sticky");
+
+        antelope = new Room("the bouncer doesn't even ask for ID!");
+
+        queenshead = new Room("//");
+
+        butlers = new Room("they serve pizza in here");
+        butlers.setItem(Items.PIZZA);
+
+        connectOutside();
+        connectRevolutions();
+    }
+
+
+    // initialise room exits
+    private void connectOutside()
+    {
+        outside.setExit("north", butlers);
         outside.setExit("east", revolutions);
-        outside.setExit("south", lab);
-        outside.setExit("west", pub);
-        outside.setExit("north", house);
+        outside.setExit("south", antelope);
+        outside.setExit("west", queenshead);
+    }
 
+    private void connectRevolutions()
+    {
         revolutions.setExit("west", outside);
+    }
+    private void connectAntelope()
+    {
+        antelope.setExit("east", outside);
+    }
+    private void connectQueenshead()
+    {
+        queenshead.setExit("north", outside);
+    }
+    private void connectButlers() {
+        butlers.setExit("west", outside);
+    }
 
-        pub.setExit("east", outside);
 
-        lab.setExit("north", outside);
-        lab.setExit("east", office);
-
-        office.setExit("west", lab);
-        
     }
 
 }
