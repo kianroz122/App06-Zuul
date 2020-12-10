@@ -114,8 +114,15 @@ public class Game
             case HELP -> printHelp();
             case GO -> goRoom(command);
             case QUIT -> wantToQuit = quit(command);
+            case LOOK -> lookAround();
         }
         return wantToQuit;
+    }
+
+    // Method for when the user types 'look', a long description of the room will be given//
+    private void lookAround()
+    {
+        System.out.println(currentRoom.getLongDescription());
     }
 
     // implementations of user commands:
