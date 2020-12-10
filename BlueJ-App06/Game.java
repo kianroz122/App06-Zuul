@@ -21,6 +21,7 @@ public class Game
 {
     private final Parser parser;
     private Room currentRoom;
+    public int Sober;
         
     /**
      * Create the game and initialise its internal map.
@@ -30,6 +31,7 @@ public class Game
         createRooms();
         parser = new Parser();
         private Map map;
+        Sober = 100;
     }
 
 
