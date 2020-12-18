@@ -30,11 +30,16 @@ public class Game
      */
     public Game() 
     {
-        createRooms();
+       // createRooms();
         parser = new Parser();
+<<<<<<< Updated upstream
         private Map map;
         sober = 100;
         take = false;
+=======
+
+        Sober = 100;
+>>>>>>> Stashed changes
     }
 
 
@@ -87,7 +92,7 @@ public class Game
         CommandWord commandWord = command.getCommandWord();
 
         switch (commandWord) {
-            case UNKNOWN -> System.out.println("I don't know what you mean...");
+            case UNKNOWN -> System.out.println("What are you on about mate..?");
             case HELP -> printHelp();
             case GO -> goRoom(command);
             case QUIT -> wantToQuit = quit(command);

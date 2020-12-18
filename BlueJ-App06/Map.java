@@ -29,39 +29,53 @@ public class Map
 
         //all of the rooms//
         revolutions = new Room("in rev's, the floors sticky");
+        revolutions.setDescription("//");
 
         queenshead = new Room("//");
+        queenshead.setDescription("//");
 
         antelope = new Room("the bouncer doesn't even ask for ID!");
+        antelope.setDescription("//");
 
         butlers = new Room("they serve pizza in here");
         butlers.setItem(Items.PIZZA);
+        butlers.setDescription("//");
 
         greyhound = new Room("//");
+        greyhound.setDescription("//");
 
         trafalgar = new Room("//");
         trafalgar.setItem(Items.CRISPS);
+        trafalgar.setDescription("//");
 
         threecrown = new Room("//");
         threecrown.setItem(Items.GLASSOFWATER);
+        threecrown.setDescription("//");
 
         queenvic = new Room ("//");
+        queenvic.setDescription("//");
 
         lordnelson = new Room ("//");
+        lordnelson.setDescription("//");
 
         harbourmaster = new Room("//");
         harbourmaster.setItem(Items.NACHOS);
+        harbourmaster.setDescription("//");
 
         horseandjockey = new Room("//");
+        horseandjockey.setDescription("//");
 
         priory = new Room("//");
-        priory.setItem(Items.NUTS);
+        priory.setItem(Items.TRAFFICCONE);
+        priory.setDescription("//");
 
         crown = new Room("//");
         crown.setItem(Items.GLASSES);
+        crown.setDescription("//");
 
         vineyard = new Room("//");
         vineyard.setItem(Items.KEY);
+        vineyard.setDescription("//");
 
         home = new Room("//");
 
